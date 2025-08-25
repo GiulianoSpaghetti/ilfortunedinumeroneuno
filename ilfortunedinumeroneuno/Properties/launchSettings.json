@@ -1,0 +1,22 @@
+{
+  "profiles": {
+    "ilfortunedinumeroneuno (Desktop)": {
+      "commandName": "MsixPackage",
+      "compatibleTargetFramework": "desktop"
+    },
+    "ilfortunedinumeroneuno (Desktop WSL2)": {
+      "commandName": "WSL2",
+      "commandLineArgs": "{ProjectDir}/bin/Debug/net9.0-desktop/ilfortunedinumeroneuno.dll",
+      "distributionName": "",
+      "compatibleTargetFramework": "desktop"
+    }
+  },
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:8080",
+      "sslPort": 0
+    }
+  }
+}

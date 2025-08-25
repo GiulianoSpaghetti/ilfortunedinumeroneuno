@@ -1,0 +1,28 @@
+﻿<Page x:Class="ilfortunedinumeroneuno.Presentation.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:local="using:ilfortunedinumeroneuno.Presentation"
+      xmlns:uen="using:Uno.Extensions.Navigation.UI"
+      xmlns:utu="using:Uno.Toolkit.UI"
+      xmlns:um="using:Uno.Material"
+      NavigationCacheMode="Required"
+      Background="{ThemeResource BackgroundBrush}">
+  <ScrollViewer IsTabStop="True">
+    <Grid utu:SafeArea.Insets="VisibleBounds">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto" />
+        <RowDefinition />
+      </Grid.RowDefinitions>
+      <utu:NavigationBar Content="{Binding Title}" />
+            <StackPanel Grid.Row="1">
+                <TextBox x:Name="cookie" HorizontalAlignment="Center" VerticalAlignment="Center" AcceptsReturn="true" TextWrapping="Wrap"  IsEnabled="false" Text="{Binding Cookie}"/>
+                <Button x:Name="btnCookie" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Nuovo Biscotto"  Command="{Binding Click}" IsEnabled="{Binding Continua}"/>
+                <TextBlock  Text="ⓒ Giulio  Sorrentino 2025" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"/>
+                <TextBlock  Text="Il server è dato da Giulio Sorrentino e contiene le barzellette della vecchia società Buongiorno." HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" />
+                <TextBlock TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Message}"/>
+                <TextBlock  Text="This software is under MIT and is distribuited free. If you paid you are be scammed." HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" />
+                <Button  Content="Ulteriori Informazioni" HorizontalAlignment="Center" VerticalAlignment="Center" Command="{Binding Info}"/>
+            </StackPanel>
+        </Grid>
+  </ScrollViewer>
+</Page>
