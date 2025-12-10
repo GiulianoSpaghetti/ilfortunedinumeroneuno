@@ -2,7 +2,7 @@
 
 Il fortune teller che parla italiano
 
-:it: La prima incarnazione seria di un fortune teller in lingua non americana. Il primo prodotto commerciale pubblicato per android che usa le api mysql invece delle api rest.
+:it: La prima incarnazione seria di un fortune teller in lingua non americana in uno platform. Il primo prodotto commerciale pubblicato per android che usa le api mysql invece delle api rest.
 
 
 ![Napoli-Logo](https://github.com/user-attachments/assets/485755c8-376c-4778-b9ba-80f6cb204142)
