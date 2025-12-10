@@ -18,10 +18,6 @@ Io me le sono conservate con lo specifico intento di creare il fortune coi cooki
 E' liberamente accessibile all'indirizzo numeronesoft.ddns.net porta 3306, con attualmente circa 500 massime, è mariadb.
 Il server è stato ispezionato dalla FIMI e non presenta particolari problemi, per cui potete realizzare il vostro fortune personale, connettendovi con le librerie mysql in qualsiasi linguaggio vogliate, basta usare come user guest e come password nessuna.
 
-## Le ultime modifiche al mio software
-
-Il mio software, a partire dal 02-03-2025 include una label per indicare quante massime sono presenti nel database. L'ultima versione del c# permette di eseguire un random senza avere doppioni, per cui se le massime sono circa 500 occorre chiudere e riaprire il software oppure premere 500 volte sul tasto di caricamento della massima per ottenere un doppione.
-
 ## Come scaricare
 
 ## Per android
