@@ -44,8 +44,11 @@ https://winstall.app/apps/Microsoft.DotNet.DesktopRuntime.10
 https://learn.microsoft.com/it-it/linux/packages
 
 ## Aggiornamenti
-Per windows i package msix sono platform indepedent ed in IL, ma sono in dotnet 9 e 10, per cui è necessario ricompilare per evitare di avere il sistema spurio in caso di nuovo dotnet framework che comunque è necessario per l'avvio del software, che se aggiornato dovrebbe impedire lo shock sulle ventole.
+Per windows i package sono platform indepedent ed in IL, ma sono in dotnet 9 e 10, per cui è necessario ricompilare per evitare di avere il sistema spurio in caso di nuovo dotnet framework che comunque è necessario per l'avvio del software, che se aggiornato dovrebbe impedire lo shock sulle ventole.
 
+
+## Bug noti
+Su android quando si chiude non crasha, ma android la chiude come app non rispondente perché manca la connessione
 
 ## Donazioni (la banda costa, così come l'elettricità)
 https://numerone.altervista.org/donazioni.php
