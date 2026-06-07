@@ -1,10 +1,10 @@
 namespace ilfortunedinumeroneuno.Presentation;
 
-public class ShellViewModel
+public class ShellModel
 {
     private readonly INavigator _navigator;
 
-    public ShellViewModel(
+    public ShellModel(
         INavigator navigator)
     {
         _navigator = navigator;

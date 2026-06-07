@@ -5,14 +5,14 @@
   xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
   IgnorableNamespaces="uap rescap">
 
-  <Identity  Name="il-fortune-di-numerone" Version="1.0.0.0" Publisher="CN=943AD59F-3DA9-4CFA-998C-F0F7FC0A251B"/>
+  <Identity  Name="il-fortune-di-numerone" Version="1.0.16.0" Publisher="CN=Giulio Sorrentino, O=numeronesoft, C=IT"/>
   <Properties >
   
-  <Logo>PackageLogo.png</Logo>
+  <Logo>Assets/Icons/PackageLogo.png</Logo>
   
   <DisplayName>Il fortune di numerone</DisplayName>
   
-  <PublisherDisplayName>Giulio Sorrenntino</PublisherDisplayName>
+  <PublisherDisplayName>Giulio Sorrentino</PublisherDisplayName>
   </Properties >
 
   <Dependencies>
@@ -28,8 +28,8 @@
     <Application Id="App"
       Executable="$targetnametoken$.exe"
       EntryPoint="$targetentrypoint$">
-      <uap:VisualElements  DisplayName="il fortune di numerone" Description="Un fortune teller italiano con cookie italiani" Square150x150Logo="MediumTile.png" Square44x44Logo="AppIcon.png">
-        <uap:DefaultTile Square71x71Logo="SmallTile.png" Wide310x150Logo="WideTile.png" Square310x310Logo="LargeTile.png"/>
+      <uap:VisualElements  DisplayName="il fortune di numerone" Description="Un fortune teller italiano con cookie italiani" Square150x150Logo="Assets/Icons/MediumTile.png" Square44x44Logo="Assets/Icons/AppIcon.png" BackgroundColor="#000000">
+        <uap:DefaultTile Square71x71Logo="Assets/Icons/SmallTile.png" Wide310x150Logo="Assets/Icons/WideTile.png" Square310x310Logo="Assets/Icosn/LargeTile.png"/>
         <uap:SplashScreen Image="Assets/Splash/SplashScreen.png"/>
       </uap:VisualElements >
     </Application>

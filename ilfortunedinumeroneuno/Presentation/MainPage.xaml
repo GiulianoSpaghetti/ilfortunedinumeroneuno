@@ -17,10 +17,11 @@
             <StackPanel Grid.Row="1">
                 <TextBox x:Name="cookie" HorizontalAlignment="Center" VerticalAlignment="Center" AcceptsReturn="true" TextWrapping="Wrap"  IsEnabled="false" Text="{Binding Cookie}"/>
                 <Button x:Name="btnCookie" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Nuovo Biscotto"  Command="{Binding Click}" IsEnabled="{Binding Continua}"/>
-                <TextBlock  Text="ⓒ Giulio  Sorrentino 2025" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"/>
+                <TextBlock  Text="ⓒ Giulio  Sorrentino 2025-2026" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"/>
                 <TextBlock  Text="Il server è dato da Giulio Sorrentino e contiene le barzellette della vecchia società Buongiorno." HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" />
+                <TextBlock TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Puoi provare a dire nel microfono 'Condividi il cookie con la mia dolce metà' oppure 'Leggimi un nuovo cookie' oppure 'Condividi il cookie sull'internet semantico di...' e la strada in cui ti trovi."/>
                 <TextBlock TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Message}"/>
-                <TextBlock  Text="This software is under MIT and is distribuited free. If you paid you are be scammed." HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" />
+                <TextBlock  Text="This software is under MIT." HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" />
                 <Button  Content="Ulteriori Informazioni" HorizontalAlignment="Center" VerticalAlignment="Center" Command="{Binding Info}"/>
             </StackPanel>
         </Grid>

@@ -1,19 +1,21 @@
 using System.Net.Sockets;
+using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 
 namespace ilfortunedinumeroneuno.Presentation;
 
-public partial class MainViewModel : ObservableObject
+public partial class MainModel : ObservableObject
 {
     private INavigator _navigator;
 
-
+    private readonly int tentativi = 10;
     internal static MySqlConnector.MySqlConnection conn = new("server=numeronesoft.ddns.net;user=guest;database=barzellette;port=3306");
     private MySqlConnector.MySqlCommand cmd;
     private MySqlConnector.MySqlDataReader reader;
     private int max = 0;
     private Random rnd;
     private int id;
-    private readonly Uri HomePage = new Uri("https://www.opencode.net/numerone/Il-fortune-di-numerone");
+    private readonly Uri HomePage = new Uri("https://www.opencode.net/numerone/ilfortunedinumeroneuno");
     public String Message
     {
         get => $"Per ottenere un doppione cliccare sul pulsante \"Nuovo Biscotto\" per {max} volte.";
@@ -41,34 +43,42 @@ public partial class MainViewModel : ObservableObject
                 OnPropertyChanged(nameof(Cookie));
             });
         }
-        catch (MySqlConnector.MySqlException ex)
+        catch (Exception ex)
         {
-            Cookie = ex.Message;
-            Continua = false;
-            MainPage.Current?.DispatcherQueue?.TryEnqueue(() =>
+            try
             {
-                OnPropertyChanged(nameof(Continua));
-            });
-            MainPage.Current?.DispatcherQueue?.TryEnqueue(() =>
+                connect(tentativi);
+                GetCookie();
+            }
+            catch (MySqlConnector.MySqlException ex2)
             {
-                OnPropertyChanged(nameof(Cookie));
-            });
-        }
-        catch (SocketException ex)
-        {
-            Cookie = ex.Message;
-            Continua = false;
-            MainPage.Current?.DispatcherQueue?.TryEnqueue(() =>
+                OnError(ex2);
+            }
+            catch (SocketException ex2)
             {
-                OnPropertyChanged(nameof(Continua));
-            });
-            MainPage.Current?.DispatcherQueue?.TryEnqueue(() =>
+                OnError(ex2);
+            }
+            catch (InvalidOperationException ex2)
             {
-                OnPropertyChanged(nameof(Cookie));
-            });
+                OnError(ex2);
+            }
         }
     }
-    public MainViewModel(
+
+    private void OnError(Exception ex) 
+    {
+        Cookie = ex.Message;
+        Continua = false;
+        MainPage.Current?.DispatcherQueue?.TryEnqueue(() =>
+        {
+            OnPropertyChanged(nameof(Continua));
+        });
+        MainPage.Current?.DispatcherQueue?.TryEnqueue(() =>
+        {
+            OnPropertyChanged(nameof(Cookie));
+        });
+    }
+    public MainModel(
         IOptions<AppConfig> appInfo,
         INavigator navigator)
     {
@@ -77,13 +87,7 @@ public partial class MainViewModel : ObservableObject
         Title += $" - {appInfo?.Value?.Environment}";
         try
         {
-            conn.Open();
-            rnd = new();
-            cmd = new("SELECT MAX(ID) FROM Barzellette", conn);
-            reader = cmd.ExecuteReader();
-            reader.Read();
-            max = reader.GetInt32(0);
-            reader.Close();
+            connect(tentativi);
             GetCookie();
             MainPage.Current?.DispatcherQueue?.TryEnqueue(() =>
             {
@@ -92,21 +96,15 @@ public partial class MainViewModel : ObservableObject
         }
         catch (MySqlConnector.MySqlException ex)
         {
-            Cookie = ex.Message;
-            Continua = false;
-            MainPage.Current?.DispatcherQueue?.TryEnqueue(() =>
-            {
-                OnPropertyChanged(nameof(Continua));
-            });
+            OnError(ex);
         }
         catch (SocketException ex)
         {
-            Cookie = ex.Message;
-            Continua = false;
-            MainPage.Current?.DispatcherQueue?.TryEnqueue(() =>
-            {
-                OnPropertyChanged(nameof(Continua));
-            });
+            OnError(ex);
+        }
+        catch (InvalidOperationException ex)
+        {
+            OnError(ex);
         }
         rnd = new();
         Click=new AsyncRelayCommand(GetCookie);
@@ -116,4 +114,29 @@ public partial class MainViewModel : ObservableObject
 
     public ICommand Click { get; }
     public ICommand Info { get; }
+
+    private void connect(int tentative)
+    {
+        try
+        {
+            conn = new("server=numeronesoft.ddns.net;user=guest;database=barzellette;port=3306");
+            conn.Open();
+            rnd = new();
+            cmd = new("SELECT MAX(ID) FROM Barzellette", conn);
+            reader = cmd.ExecuteReader();
+            reader.Read();
+            max = reader.GetInt32(0);
+            reader.Close();
+        }
+        catch (Exception ex)
+        {
+            if (tentative < 1)
+                throw ex;
+            else
+            {
+                Thread.Sleep(1000);
+                connect(tentative - 1);
+            }
+        }
+    }
 }

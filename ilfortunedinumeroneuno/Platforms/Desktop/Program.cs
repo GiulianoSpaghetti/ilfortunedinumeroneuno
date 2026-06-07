@@ -1,6 +1,7 @@
 using Uno.UI.Hosting;
 
 namespace ilfortunedinumeroneuno;
+
 internal class Program
 {
     [STAThread]
