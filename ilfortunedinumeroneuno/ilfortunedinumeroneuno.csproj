@@ -41,7 +41,7 @@
     <WindowsPackageType>MSIX</WindowsPackageType>
     <GenerateAppInstallerFile>False</GenerateAppInstallerFile>
     <AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
-    <PackageCertificateThumbprint>66369CFAA7A0C376B11DB721DD0B066DEB9F4268</PackageCertificateThumbprint>
+    <PackageCertificateThumbprint>5A4086786D585EC13D2717CDF413A894199CC2B0</PackageCertificateThumbprint>
     <AppxPackageSigningTimestampDigestAlgorithm>SHA256</AppxPackageSigningTimestampDigestAlgorithm>
     <AppxAutoIncrementPackageRevision>False</AppxAutoIncrementPackageRevision>
     <AppxSymbolPackageEnabled>False</AppxSymbolPackageEnabled>
