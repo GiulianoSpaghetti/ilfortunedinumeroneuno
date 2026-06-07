@@ -1,3 +1,5 @@
+[![.NET Uno Build](https://github.com/GiulianoSpaghetti/ilfortunedinumeroneuno/actions/workflows/dotnet-desktop.yml/badge.svg)](https://github.com/GiulianoSpaghetti/ilfortunedinumeroneuno/actions/workflows/dotnet-desktop.yml)
+
 # ATTENZIONE
 [https://gemini.google.com/app/e0ecacb2b5e87ed2](https://gemini.google.com/app/e0ecacb2b5e87ed2)
 
