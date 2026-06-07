@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="MySqlConnector" />
+    <PackageReference Include="Uno.Themes.WinUI.Markup" />
   </ItemGroup>
 
 </Project>
