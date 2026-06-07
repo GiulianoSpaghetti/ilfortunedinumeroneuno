@@ -39,11 +39,11 @@ jobs:
       shell: pwsh
 
     - name: Restore packages
-      run: dotnet restore ilfortunedinumeroneuno.slnx
+      run: dotnet restore ilfortunedinumeroneuno.slnx -r win-arm64
 
     - name: Build UNO MSIX
       run: |
-        dotnet publish ilfortunedinumeroneuno/ilfortunedinumeroneuno.csproj -f net10.0-windows10.0.26100.0 -p:publishProfile=.\ilfortunedinumeroneuno\Properties\PublishProfiles\MSIX-win-x64.pubxml
+        dotnet publish ilfortunedinumeroneuno/ilfortunedinumeroneuno.csproj -f net10.0-windows10.0.26100.0 -p:publishProfile=.\ilfortunedinumeroneuno\Properties\PublishProfiles\MSIX-win-arm64.pubxml
       shell: pwsh
 
     - name: Upload MSIX artifact
