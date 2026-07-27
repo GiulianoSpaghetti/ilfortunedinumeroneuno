@@ -6,8 +6,10 @@
     See https://aka.platform.uno/using-uno-sdk#implicit-packages for more information regarding the Implicit Packages.
   -->
   <ItemGroup>
-    <PackageVersion Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.28000.1839" />
-    <PackageVersion Include="MySqlConnector" Version="2.6.0" />
+    <PackageVersion Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.28000.2526" />
+    <PackageVersion Include="MySqlConnector" Version="2.6.1" />
+    <PackageVersion Include="Microsoft.WindowsAppSDK" Version="2.3.1" />
+    <PackageVersion Include="Uno.Settings.DevServer" Version="1.11.1" />
     <PackageVersion Include="Uno.Themes.WinUI.Markup" Version="6.1.1" />
   </ItemGroup>
 </Project>

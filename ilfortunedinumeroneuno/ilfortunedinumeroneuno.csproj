@@ -6,14 +6,14 @@
     <UnoSingleProject>true</UnoSingleProject>
 
     <!-- Display name -->
-    <ApplicationTitle>ilfortunedinumeroneuno</ApplicationTitle>
+    <ApplicationTitle>il fortune di numerone uno</ApplicationTitle>
     <!-- App Identifier -->
     <ApplicationId>org.altervista.numerone.fortuneuno</ApplicationId>
     <!-- Versions -->
     <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
     <ApplicationVersion>1</ApplicationVersion>
     <!-- Package Publisher -->
-    <ApplicationPublisher>numer</ApplicationPublisher>
+    <ApplicationPublisher>Giulio Sorrentino</ApplicationPublisher>
     <!-- Package Description -->
     <Description>ilfortunedinumeroneuno powered by Uno Platform.</Description>
 
@@ -51,9 +51,11 @@
   </PropertyGroup>
   <ItemGroup Condition="'$(TargetFramework)' == 'net10.0-windows10.0.26100.0'">
       <PackageReference Include="Microsoft.Windows.SDK.BuildTools" />
+      <PackageReference Include="Microsoft.WindowsAppSDK" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="MySqlConnector" />
+    <PackageReference Include="Uno.Settings.DevServer" />
     <PackageReference Include="Uno.Themes.WinUI.Markup" />
   </ItemGroup>
 
