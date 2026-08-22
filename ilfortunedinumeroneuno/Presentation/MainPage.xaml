@@ -24,6 +24,21 @@
                 <TextBlock  Text="This software is under MIT." HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" />
                 <Button  Content="Ulteriori Informazioni" HorizontalAlignment="Center" VerticalAlignment="Center" Command="{Binding Info}"/>
             </StackPanel>
+            <InfoBar x:Name="Snackbar"
+             Title="Notification"
+             Message="{Binding Error}"
+             Severity="Error"
+             IsOpen="False"
+             VerticalAlignment="Bottom"
+             HorizontalAlignment="Center"
+             Margin="0,0,0,24"
+             CornerRadius="8"
+             IsClosable="True">
+                <InfoBar.ActionButton>
+                    <Button Content="Ciudi" Click="Dimiss_Click"/>
+                </InfoBar.ActionButton>
+            </InfoBar>
+
         </Grid>
   </ScrollViewer>
 </Page>

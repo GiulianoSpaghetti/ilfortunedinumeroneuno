@@ -67,8 +67,12 @@ public partial class MainModel : ObservableObject
 
     private void OnError(Exception ex) 
     {
-        Cookie = ex.Message;
+        Error = ex.Message;
         Continua = false;
+        MainPage.Current?.DispatcherQueue?.TryEnqueue(() =>
+        {
+            OnPropertyChanged(nameof(Error));
+        });
         MainPage.Current?.DispatcherQueue?.TryEnqueue(() =>
         {
             OnPropertyChanged(nameof(Continua));
@@ -77,6 +81,7 @@ public partial class MainModel : ObservableObject
         {
             OnPropertyChanged(nameof(Cookie));
         });
+        MainPage.Current?.ShowSnackbar();
     }
     public MainModel(
         IOptions<AppConfig> appInfo,
@@ -111,6 +116,7 @@ public partial class MainModel : ObservableObject
         Info=new AsyncRelayCommand(InfoClick);
     }
     public string? Title { get; }
+    public string? Error { get; private set; }
 
     public ICommand Click { get; }
     public ICommand Info { get; }
