@@ -35,7 +35,7 @@
              CornerRadius="8"
              IsClosable="True">
                 <InfoBar.ActionButton>
-                    <Button Content="Ciudi" Click="Dimiss_Click"/>
+                    <Button Content="Chiudi" Click="Dimiss_Click"/>
                 </InfoBar.ActionButton>
             </InfoBar>
 
